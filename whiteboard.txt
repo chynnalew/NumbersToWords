@@ -1,0 +1,61 @@
+Create a console app that translates numbers in numeric form into written words. For example, it would translate 384 into "three hundred eighty four". Use multiple dictionaries to solve this.
+
+Start small, and then get your code working for numbers up to 1 trillion.
+
+Need I remind you to start with your specs and use TDD as you go? Make sure you include a README for this project and create a Git repository for it.
+
+If you get this far, you've done great! Don't worry about getting to the rest of the projects by the end of the day.
+
+if number > 10 || < 20 use teens instead of digit1 and digit2
+teens = dictionary
+
+digit1 =  public static Dictionary<int, string> Digit1 = new Dictionary<int, string>() {
+  {"0", ""}
+  {"1", "one},
+  {"2", "two},
+  {"3", "three},
+  {"4", "four},
+  {"5", "five},
+  {"6", "six},
+  {"7", "seven},
+  {"8", "eight},
+  {"9", "nine"},
+  {"10", "ten"}
+
+ " up to 19
+
+digit2 = public static Dictionary<string, string> scrabbleScores = new Dictionary<string, string>() {
+  {0, ""}
+  {2, "twenty"}
+  {3, "thirty"}
+
+digit3 = 
+  {0, ""} 
+  {3, hundred}
+  {, thousand}
+  {3, million}
+  {4, billion}
+  {5, trillion}
+
+457
+4568
+{[4] [5] [7]}
+
+input: 546378
+output: five hundred forty six thousand three hundred seventy eight
+
+word[0] ones place
+word[1] tens place
+
+word[word.length -1] =none
+
+int number = int.Parse(word)
+if number > 10 || < 20, use teens
+
+for (i = 0; i < word.length; i++)
+  {
+    if 
+    OnesString = digit1[word[word.length -1]]
+  }
+
+

@@ -1,0 +1,12 @@
+/Users/chynnalew/Desktop/week8/NumbersToWords.Solution/NumbersToWords/obj/Debug/net5.0/NumbersToWords.csproj.AssemblyReference.cache
+/Users/chynnalew/Desktop/week8/NumbersToWords.Solution/NumbersToWords/obj/Debug/net5.0/NumbersToWords.GeneratedMSBuildEditorConfig.editorconfig
+/Users/chynnalew/Desktop/week8/NumbersToWords.Solution/NumbersToWords/obj/Debug/net5.0/NumbersToWords.AssemblyInfoInputs.cache
+/Users/chynnalew/Desktop/week8/NumbersToWords.Solution/NumbersToWords/obj/Debug/net5.0/NumbersToWords.AssemblyInfo.cs
+/Users/chynnalew/Desktop/week8/NumbersToWords.Solution/NumbersToWords/obj/Debug/net5.0/NumbersToWords.csproj.CoreCompileInputs.cache
+/Users/chynnalew/Desktop/week8/NumbersToWords.Solution/NumbersToWords/bin/Debug/net5.0/NumbersToWords.deps.json
+/Users/chynnalew/Desktop/week8/NumbersToWords.Solution/NumbersToWords/bin/Debug/net5.0/NumbersToWords.dll
+/Users/chynnalew/Desktop/week8/NumbersToWords.Solution/NumbersToWords/bin/Debug/net5.0/ref/NumbersToWords.dll
+/Users/chynnalew/Desktop/week8/NumbersToWords.Solution/NumbersToWords/bin/Debug/net5.0/NumbersToWords.pdb
+/Users/chynnalew/Desktop/week8/NumbersToWords.Solution/NumbersToWords/obj/Debug/net5.0/NumbersToWords.dll
+/Users/chynnalew/Desktop/week8/NumbersToWords.Solution/NumbersToWords/obj/Debug/net5.0/ref/NumbersToWords.dll
+/Users/chynnalew/Desktop/week8/NumbersToWords.Solution/NumbersToWords/obj/Debug/net5.0/NumbersToWords.pdb
