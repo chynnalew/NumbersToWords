@@ -29,7 +29,23 @@ namespace NumbersToWords.Tests
     {
       string inputNum = "47";
       string numToWord = Number.NumberConvert(inputNum);
-      Assert.AreEqual(numToWord, "ninety nine");
+      Assert.AreEqual(numToWord, "forty seven");
+    }
+    
+    [TestMethod]
+    public void NumberConvert_OutputsWith104_String()
+    {
+      string inputNum = "104";
+      string numToWord = Number.NumberConvert(inputNum);
+      Assert.AreEqual(numToWord, "one hundred four");
+    }
+
+    [TestMethod]
+    public void NumberConvert_OutputsWith817_String()
+    {
+      string inputNum = "817";
+      string numToWord = Number.NumberConvert(inputNum);
+      Assert.AreEqual(numToWord, "eight hundred seventeen");
     }
   }
 }

@@ -7,6 +7,7 @@ namespace NumbersToWords.Models
   {
     public static Dictionary<string, string> digit1 = new Dictionary<string, string>()
     {
+      {"0", ""},
       {"1", "one"},
       {"2", "two"},
       {"3", "three"},
@@ -30,6 +31,7 @@ namespace NumbersToWords.Models
 
         public static Dictionary<string, string> digit2 = new Dictionary<string, string>()
     {
+      {"0", ""},
       {"2", "twenty"},
       {"3", "thirty"},
       {"4", "forty"},
@@ -40,17 +42,55 @@ namespace NumbersToWords.Models
       {"9", "ninety"},
     };
 
+        public static Dictionary<int, string> suffix = new Dictionary<int, string>()
+    {
+      {3, "hundred"},
+      {4, "thousand"},
+      {7, "million"},
+      {10, "billion"},
+      {13, "trillion"},
+    };
+
     public static string NumberConvert(string inputNum)
     {
+      string lastDigit = digit1[inputNum[inputNum.Length - 1].ToString()];
       int inputInt = int.Parse(inputNum);
-      if (inputInt<=19)
+      if (inputNum.Length > 2)
       {
-        return digit1[inputNum];
+      string secondLastDigit = digit2[inputNum[inputNum.Length - 2].ToString()];
+      int lastTwoDigits = int.Parse(inputNum[inputNum.Length -2] + inputNum[inputNum.Length - 1]);
+      bool teensCheck = lastTwoDigits <= 19;
+        if (inputNum[1].ToString() == "0")
+        {
+          string result = $"{digit1[inputNum[0].ToString()]} hundred {lastDigit}";
+          return result;
+        } 
+        else
+        {
+          string tensPlace = $"{secondLastDigit} {lastDigit}";
+          if (teensCheck)
+          {
+            tensPlace = $"{digit1[lastTwoDigits.ToString()]}";
+          }
+          // else
+          // {
+          // }
+          string result = $"{digit1[inputNum[0].ToString()]} hundred {digit1[tensPlace]}";
+          return result;
+        }
       }
       else
       {
-        string result = $"{digit2[inputNum[0].ToString()]} {digit1[inputNum[1].ToString()]}";
-        return result;
+        if (teensCheck)
+        {
+          return digit1[inputNum];
+        }
+        else
+        {
+          string secondLastDigit = digit2[inputNum[inputNum.Length - 2].ToString()];
+          string result = $"{secondLastDigit} {lastDigit}";
+          return result;
+        }
       }
     }
   }
