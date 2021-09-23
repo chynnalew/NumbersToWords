@@ -32,6 +32,7 @@ namespace NumbersToWords.Models
         public static Dictionary<string, string> digit2 = new Dictionary<string, string>()
     {
       {"0", ""},
+      {"1", ""},
       {"2", "twenty"},
       {"3", "thirty"},
       {"4", "forty"},
@@ -42,56 +43,62 @@ namespace NumbersToWords.Models
       {"9", "ninety"},
     };
 
-        public static Dictionary<int, string> suffix = new Dictionary<int, string>()
-    {
-      {3, "hundred"},
-      {4, "thousand"},
-      {7, "million"},
-      {10, "billion"},
-      {13, "trillion"},
-    };
+    //     public static Dictionary<int, string> suffix = new Dictionary<int, string>()
+    // {
+    //   {4, "thousand"},
+    //   {7, "million"},
+    //   {10, "billion"},
+    //   {13, "trillion"},
+    // };
 
     public static string NumberConvert(string inputNum)
     {
-      string lastDigit = digit1[inputNum[inputNum.Length - 1].ToString()];
       int inputInt = int.Parse(inputNum);
-      if (inputNum.Length > 2)
+
+      string Ones(string number)
       {
-      string secondLastDigit = digit2[inputNum[inputNum.Length - 2].ToString()];
-      int lastTwoDigits = int.Parse(inputNum[inputNum.Length -2] + inputNum[inputNum.Length - 1]);
-      bool teensCheck = lastTwoDigits <= 19;
-        if (inputNum[1].ToString() == "0")
+        return digit1[number];
+      }
+
+      string Tens(string number)
+      {
+      string numberToPass = number.Remove(0, 1);
+      if (int.Parse(number) >= 20)
         {
-          string result = $"{digit1[inputNum[0].ToString()]} hundred {lastDigit}";
-          return result;
-        } 
-        else
-        {
-          string tensPlace = $"{secondLastDigit} {lastDigit}";
-          if (teensCheck)
+          string lastDigit = Ones(numberToPass);
+          string secondLastDigit = digit2[number[0].ToString()];
+          if (secondLastDigit != "0")
           {
-            tensPlace = $"{digit1[lastTwoDigits.ToString()]}";
+            secondLastDigit += " ";
           }
-          // else
-          // {
-          // }
-          string result = $"{digit1[inputNum[0].ToString()]} hundred {digit1[tensPlace]}";
+          string result = $"{secondLastDigit}{lastDigit}";
           return result;
         }
-      }
-      else
-      {
-        if (teensCheck)
+        else if (number[0].ToString() == "0")
         {
-          return digit1[inputNum];
+          return Ones(numberToPass);
         }
         else
         {
-          string secondLastDigit = digit2[inputNum[inputNum.Length - 2].ToString()];
-          string result = $"{secondLastDigit} {lastDigit}";
+          return Ones(number);
+        }
+      }
+
+      string Hundreds(string number)
+      {
+        if (number[0].ToString() == "0" || inputInt < 100)
+        {
+          return Tens(number);
+        }
+        else
+        {
+          string numberToPass = number.Remove(0, 1);
+          string endNumber = Tens(numberToPass);
+          string result = $"{digit1[number[0].ToString()]} hundred {endNumber}";
           return result;
         }
       }
+      return Hundreds(inputNum);
     }
   }
 }

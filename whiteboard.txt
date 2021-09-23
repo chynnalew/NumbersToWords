@@ -58,4 +58,21 @@ for (i = 0; i < word.length; i++)
     OnesString = digit1[word[word.length -1]]
   }
 
+if (number < 20)
+{
+  return digit1[number]
+}
+else if (number < 100 && number >= 20 )
+{
+  return digit1[number[1] + digit1[0]
+}
+else if (number < 1000)
+{
 
+}
+else if (number < 10000)
+else if (number < 100000)
+
+number string = ""
+if (inputInt > 1000)
+numberString += hundreds(firstdigits) += thousand += hundreds(lastdigits)
